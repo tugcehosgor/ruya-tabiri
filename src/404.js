@@ -1,7 +1,8 @@
-ruyaURL = window.location.pathname.slice(13)
+debugger;
+
+var ruyaURL = window.location.pathname.slice(13)
 console.log(currentUrl)
 
-debugger;
 
 const ruyaRef = ref(database, ruyaURL);
 get(ruyaRef).then((snapshot) => {
