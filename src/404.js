@@ -1,7 +1,7 @@
 var currentUrl = window.location.pathname
 console.log(currentUrl)
-var key = ref.on('value',"heteLEme")
-
+// var key = ref.on('value',"heteLEme")
+var key = ref(database, "heteLEme")
 // var key = get(ref(database,"heteLEme"))
 console.log("keys:" + key)
 
