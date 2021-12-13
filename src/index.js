@@ -9,7 +9,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase
 // https://firebase.google.com/docs/web/setup#available-libraries
 // import { initializeApp } from 'firebase/app';
 // import { getDatabase, ref, set } from "firebase/database";
-import { getDatabase, ref, set, get } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+import { getDatabase, ref, set, get, onValue } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -97,13 +97,7 @@ function changeUrl() {
   return myWindow;
 }
 
-
-
-
-
-
 document.getElementById("submit").addEventListener("click", function () {
-  
   readInputs();
   makeHtml();
   // final();
@@ -112,4 +106,20 @@ document.getElementById("submit").addEventListener("click", function () {
   localStorage.setItem("item:" + ruya, ruyaURL);
   console.log(localStorage.getItem("item:" + ruya));
   set(ref(database, ruyaURL), ruya);
+});
+
+
+
+
+
+const currentURL = 'Ozum_Sozum_Bir_İlma2i'
+const ruyaRef = ref(database, currentURL);
+get(ruyaRef).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
 });

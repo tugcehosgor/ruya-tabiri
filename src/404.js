@@ -1,9 +1,28 @@
-var currentUrl = window.location.pathname
+ruyaURL = window.location.pathname
 console.log(currentUrl)
-// var key = ref.on('value',"heteLEme")
-var key = ref(database, "heteLEme")
-// var key = get(ref(database,"heteLEme"))
-console.log("keys:" + key)
+
+const ruyaRef = ref(database, ruyaURL);
+onValue(ruyaRef, (snapshot) => {
+  const ruyaShared = snapshot.val();
+  console.log(ruyaShared)
+});
+
+const ruyaRef = ref(database, ruyaURL);
+get(ruyaRef).then((snapshot) => {
+  if (snapshot.exists()) { // database'de var.
+    console.log(snapshot.val());
+    //indexteki gibi yazdır
+    changeUrl();
+  } else { // database'de yok
+    console.log("No data available");
+    // database e key url value  "yeni" olarak eklenecek
+  }
+}).catch((error) => {
+  console.error(error);
+});
+
+
+
 
 // if (currentUrl === get(ref(database, ruyaURL),ruya)){
 
