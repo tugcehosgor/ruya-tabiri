@@ -1,5 +1,6 @@
-ruyaURL = window.location.pathname
+ruyaURL = window.location.pathname.slice(13)
 console.log(currentUrl)
+
 
 const ruyaRef = ref(database, ruyaURL);
 onValue(ruyaRef, (snapshot) => {
