@@ -1,6 +1,8 @@
 var currentUrl = window.location.pathname
 console.log(currentUrl)
-var key = get(ref(database,"heteLEme"))
+var key = ref.on('value',"heteLEme")
+
+// var key = get(ref(database,"heteLEme"))
 console.log("keys:" + key)
 
 // if (currentUrl === get(ref(database, ruyaURL),ruya)){
