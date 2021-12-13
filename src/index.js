@@ -103,7 +103,7 @@ function makeHtml() {
 
 
 function changeURL() {
-  var myWindow = window.history.pushState({}, "", "/?ruya=" + ruyaURL);
+  var myWindow = window.history.pushState({}, "", "?ruya=" + ruyaURL);
   return myWindow;
 }
 

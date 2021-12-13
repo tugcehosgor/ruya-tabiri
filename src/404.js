@@ -1,7 +1,7 @@
 debugger;
 
 var ruyaURL = window.location.pathname.slice(13)
-var redirectURL = "/?ruya=" + ruyaURL 
+var redirectURL = "?ruya=" + ruyaURL 
 
 function Redirect() {
     window.location = redirectURL;
