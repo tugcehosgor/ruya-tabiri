@@ -1,2 +1,34 @@
-var currentUrl = window.location.href
+var currentUrl = window.location.pathname
 console.log(currentUrl)
+
+if (currentUrl === get(ref(database, ruyaURL),ruya)){
+
+    document.getElementById("404html").innerHTML = `
+  <div> 
+<row>
+  <col></col>
+  <col></col>
+  <col>
+    <label>Ruyada</label><br>
+    <label>${ruya}</label><br>
+    <label >gormeniz</label><br>
+    <label >Kicinizin acik kaldigina delalet etmektedir.</label><br>
+    
+    
+`;
+}
+
+else {
+    document.getElementById("404html").innerHTML = `
+  <div> 
+<row>
+  <col></col>
+  <col></col>
+  <col>
+    <label>Ruyaniz hayrolsun.</label><br>
+    
+    
+    
+    
+`;
+}
