@@ -107,19 +107,3 @@ document.getElementById("submit").addEventListener("click", function () {
   console.log(localStorage.getItem("item:" + ruya));
   set(ref(database, ruyaURL), ruya);
 });
-
-
-
-
-
-const currentURL = 'Ozum_Sozum_Bir_İlma2i'
-const ruyaRef = ref(database, currentURL);
-get(ruyaRef).then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-  } else {
-    console.log("No data available");
-  }
-}).catch((error) => {
-  console.error(error);
-});
