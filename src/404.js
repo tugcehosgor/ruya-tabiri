@@ -1,22 +1,15 @@
 debugger;
 
 var ruyaURL = window.location.pathname.slice(13)
-console.log(ruyaURL)
+var redirectURL = "/?ruya=" + ruyaURL 
+
+function Redirect() {
+    window.location = redirectURL;
+ }
+
+ Redirect();
 
 
-const ruyaRef = ref(database, ruyaURL);
-get(ruyaRef).then((snapshot) => {
-  if (snapshot.exists()) { // database'de var.
-    console.log(snapshot.val());
-    //indexteki gibi yazdır
-    changeUrl();
-  } else { // database'de yok
-    console.log("No data available");
-    // database e key url value  "yeni" olarak eklenecek
-  }
-}).catch((error) => {
-  console.error(error);
-});
 
 
 

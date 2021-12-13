@@ -1,6 +1,14 @@
 // import "./styles.css";
 
-console.log(window.location.href)
+console.log("location.href " + window.location.href)
+
+const queryString = window.location.search;
+console.log("query string  " + queryString);
+const urlParams = new URLSearchParams(queryString);
+const ruyaURL = urlParams.get('ruya')
+console.log("ruya URl  " + ruyaURL);
+
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
@@ -32,7 +40,6 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 document.getElementById("app").innerHTML = `
-
 <div> 
 <row>
   <col></col>
@@ -41,13 +48,11 @@ document.getElementById("app").innerHTML = `
     <label>Ruyada</label><br>
     <input id="mana" type="text" value=""><br><br>
     <label >ne anlama gelir?</label><br>
-    <button id="submit">ara</button><br><br>
-    
+    <button id="submit">ara</button><br><br> 
 `;
 
 var ruya;
-var ruyaURL;
-// var urlPath;
+
 function readInputs() {
   ruya = document.getElementById("mana").value;
   return ruya;
@@ -72,14 +77,14 @@ function makeHtml() {
   ruyaURL = "ruyada-" + ruyaURL + "-gormek-ne-manaya-gelir"; 
   return ruyaURL;
 }
-// function final() {
-//   urlPath = "/";
-//   urlPath = urlPath.concat(heteleme);
-//   return urlPath;
-// }
 
-function changeUrl() {
+
+function changeURL() {
   var myWindow = window.history.pushState({}, "", ruyaURL);
+  return myWindow;
+}
+
+function ruyaTabiri(ruya) {
   document.getElementById("app").innerHTML = `
   <div> 
 <row>
@@ -90,20 +95,47 @@ function changeUrl() {
     <label>${ruya}</label><br>
     <label >gormeniz</label><br>
     <label >Kicinizin acik kaldigina delalet etmektedir.</label><br>
-    
-    
 `;
 
-  return myWindow;
 }
+  
+
 
 document.getElementById("submit").addEventListener("click", function () {
   readInputs();
   makeHtml();
   // final();
-  changeUrl();
+  changeURL();
+  ruyaTabiri(ruya);
   console.log(ruyaURL);
   localStorage.setItem("item:" + ruya, ruyaURL);
   console.log(localStorage.getItem("item:" + ruya));
   set(ref(database, ruyaURL), ruya);
+});
+
+
+
+const ruyaRef = ref(database, ruyaURL);
+get(ruyaRef).then((snapshot) => {
+  if (snapshot.exists()) { // database'de var.
+    console.log(snapshot.val());
+    //indexteki gibi yazdır
+    ruyaTabiri(snapshot.val());
+  } else { // database'de yok
+    console.log("No data available");
+    // database e key url value  "yeni" olarak eklenecek
+    set(ref(database, ruyaURL), "YENI");
+    // medyumlar bakyıor yazdır
+    document.getElementById("app").innerHTML = `
+  <div> 
+<row>
+  <col></col>
+  <col></col>
+  <col>
+    <label>Medyumlarımız bu konuda halen tartışmakta.</label><br>
+    <label>Daha sonra tekrar deneyiniz.</label><br>
+`;
+  }
+}).catch((error) => {
+  console.error(error);
 });
