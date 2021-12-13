@@ -2,11 +2,6 @@ ruyaURL = window.location.pathname.slice(13)
 console.log(currentUrl)
 
 debugger;
-const ruyaRef = ref(database, ruyaURL);
-onValue(ruyaRef, (snapshot) => {
-  const ruyaShared = snapshot.val();
-  console.log(ruyaShared)
-});
 
 const ruyaRef = ref(database, ruyaURL);
 get(ruyaRef).then((snapshot) => {
