@@ -1,2 +1,2 @@
-var currentUrl = window.location
+var currentUrl = window.location.href
 console.log(currentUrl)
