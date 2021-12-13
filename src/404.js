@@ -1,7 +1,7 @@
 debugger;
 
 var ruyaURL = window.location.pathname.slice(13)
-console.log(currentUrl)
+console.log(ruyaURL)
 
 
 const ruyaRef = ref(database, ruyaURL);
