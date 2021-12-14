@@ -1,4 +1,5 @@
-// import "./styles.css";
+
+
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
@@ -31,7 +32,7 @@ const database = getDatabase(app);
 
 
 console.log("location.href::: " + window.location.href)
-debugger;
+
 const queryString = window.location.search;
 console.log("query string:::  " + queryString);
 const urlParams = new URLSearchParams(queryString);
@@ -47,18 +48,31 @@ console.log("ruya URL:::  " + ruyaURL);
 
 
 
+
 function enterRuya() {
 document.getElementById("app").innerHTML = `
-<div> 
-<row>
-  <col></col>
-  <col></col>
-  <col>
-    <label>Ruyada</label><br>
-    <input id="mana" type="text" value=""><br><br>
-    <label >ne anlama gelir?</label><br>
-    <button id="submit">ara</button><br><br> 
-`;
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <img src="/ruya-tapiri-speech.png" class="img-fluid" alt="...">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+    <p class="text-center">Bana rüyanı söyle, sana ne anlama geldiğini söyleyeyim.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+      <div class="col-4  mx-auto">
+        <input id="mana" type="text" value="" placeholder="Rüyanda ne gördün?" ><br>
+      </div>
+      <div class="col-3  mx-auto">
+        <button id="submit">Tapir'e Sor</button><br>
+      </div>
+  </div>
+    
+</div>
+  `;
 
 document.getElementById("submit").addEventListener("click", function () {
   readInputs();
@@ -109,15 +123,16 @@ function changeURL() {
 
 function ruyaTabiri(ruya) {
   document.getElementById("app").innerHTML = `
-  <div> 
-<row>
-  <col></col>
-  <col></col>
-  <col>
-    <label>Ruyada</label><br>
-    <label>${ruya}</label><br>
-    <label >gormeniz</label><br>
-    <label >Kicinizin acik kaldigina delalet etmektedir.</label><br>
+  <div class="container mt-5">
+        <div class="row ">
+          <div class="col ">
+            <p class="text-center">Rüyada ${ruya} görmek</p>
+            <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
+            </div>
+        </div>
+
+
+      <div>
 `;
 
 }
@@ -139,13 +154,17 @@ function checkRuya() {
       set(ref(database, ruyaURL), "YENI");
       // medyumlar bakyıor yazdır
       document.getElementById("app").innerHTML = `
-    <div> 
-  <row>
-    <col></col>
-    <col></col>
-    <col>
-      <label>Medyumlarımız bu konuda halen tartışmakta.</label><br>
-      <label>Daha sonra tekrar deneyiniz.</label><br>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col">
+          <label>Ruya Tapir'i bu konuda halen çalışmakta.</label>
+          <label>Daha sonra tekrar deneyiniz.</label>        
+          </div>
+        </div>
+
+
+      <div> 
+  
   `;
     }
   }).catch((error) => {
