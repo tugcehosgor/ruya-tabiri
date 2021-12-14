@@ -44,8 +44,17 @@ if (ruyaURL === null) {
 }
 console.log("ruya URL:::  " + ruyaURL);
 
-
-
+var input = document.getElementById("mana");
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});
 
 
 
@@ -53,40 +62,42 @@ function enterRuya() {
 document.getElementById("app").innerHTML = `
 <div class="container">
   <div class="row">
-    <div class="col">
-    <img src="/Tapir-fine-line.png" class="img-fluid" alt="...">
+    <div class="col text-center">
+    <img src="/Tapir-fine-line-cropped.png" style="width:50%" class="img-fluid" alt="...">
     </div>
   </div>
   <div class="row">
     <div class="col">
-    <p class="text-center">Bana rüyanı söyle, sana ne anlama geldiğini söyleyeyim.</p>
+    <p class="text-center mt-5">Bana rüyanı söyle, sana ne anlama geldiğini söyleyeyim.</p>
     </div>
   </div>
   <div class="row justify-content-center">
-      <div class="col-4  mx-auto">
+      <div class="col text-center">
         <input id="mana" type="text" value="" placeholder="Rüyanda ne gördün?" ><br>
       </div>
-      <div class="col-3  mx-auto">
-        <button id="submit">Tapir'e Sor</button><br>
+  </div>
+    
+  <div class="row justify-content-center">
+      <div class="col text-center">
+      <button class="mt-3" id="submit">Tapir'e Sor</button><br>
       </div>
   </div>
     
 </div>
   `;
 
+
 document.getElementById("submit").addEventListener("click", function () {
   readInputs();
   makeHtml();
-  // final();
   changeURL();
   ruyaTabiri(ruya);
   console.log(ruyaURL);
-  localStorage.setItem("item:" + ruya, ruyaURL);
-  console.log(localStorage.getItem("item:" + ruya));
   set(ref(database, ruyaURL), ruya);
 });
 
 }
+
 
 var ruya;
 
