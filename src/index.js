@@ -136,10 +136,10 @@ function ruyaTabiri(ruya) {
   document.getElementById("app").innerHTML = `
   <div class="container mt-5">
         <div class="row ">
-          <div class="col ">
+          <div class="col text-center">
             <p class="text-center">Rüyada ${ruya} görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
-            <img src="/Sleeping-tapir-fine.png" class="img-fluid" alt="...">
+            <img src="/Sleeping-tapir-fine.png" style="width:50%" class="img-fluid" alt="...">
             </div>
         </div>
 
@@ -168,9 +168,9 @@ function checkRuya() {
       document.getElementById("app").innerHTML = `
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col">
-          <label>Ruya Tapir'i bu konuda halen çalışmakta.</label>
-          <label>Daha sonra tekrar deneyiniz.</label>        
+          <div class="col mt-5">
+          <p class="text-center">Ruya Tapir'i bu konuda halen çalışmakta.</p>
+          <p class="text-center">Lütfen daha sonra tekrar deneyiniz.</p>        
           </div>
         </div>
 
