@@ -54,7 +54,7 @@ document.getElementById("app").innerHTML = `
 <div class="container">
   <div class="row">
     <div class="col">
-    <img src="/ruya-tapiri-speech.png" class="img-fluid" alt="...">
+    <img src="/Tapir-fine-line.png" class="img-fluid" alt="...">
     </div>
   </div>
   <div class="row">
@@ -128,6 +128,7 @@ function ruyaTabiri(ruya) {
           <div class="col ">
             <p class="text-center">Rüyada ${ruya} görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
+            <img src="/Sleeping-tapir-fine.png" class="img-fluid" alt="...">
             </div>
         </div>
 
