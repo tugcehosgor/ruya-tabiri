@@ -1,5 +1,38 @@
-body {
-  background: white;
-  font-family: "Fuzzy Bubbles", serif;
-  font-size: 40px;
+@media (min-width: 576px) {
+  body {
+    background: white;
+    font-family: "Fuzzy Bubbles", serif;
+    font-size: 40px;
+  }
+  img {
+    width: 100%;
+  }
+  input[type="text"],
+  #mana {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  input:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  textarea:focus,
+  input:focus {
+    outline: none;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+  img {
+    width: 50%;
+  }
 }

@@ -62,18 +62,19 @@ function enterRuya() {
 document.getElementById("app").innerHTML = `
 <div class="container">
   <div class="row">
-    <div class="col text-center">
-    <img src="/Tapir-fine-line-cropped.png" style="width:50%" class="img-fluid" alt="...">
+    <div class="col text-center mt-md-4">
+    <img src="/Tapir-fine-line-cropped.png" class="img-fluid" alt="...">
     </div>
   </div>
-  <div class="row">
+  <div class="row mx-md-5">
     <div class="col">
-    <p class="text-center mt-5">Bana rüyanı söyle, sana ne anlama geldiğini söyleyeyim.</p>
+    <p class="text-center mt-md-4">Bana rüyanı söyle,<br>sana ne anlama geldiğini söyleyeyim.</p>
     </div>
   </div>
   <div class="row justify-content-center">
-      <div class="col text-center">
-        <input id="mana" type="text" value="" placeholder="Rüyanda ne gördün?" ><br>
+      
+      <div class="col">
+        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required /> gordum</p><br>
       </div>
   </div>
     
