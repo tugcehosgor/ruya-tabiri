@@ -200,21 +200,15 @@ data-layout="button_count">
 </div>
 
 `;
-  var meta1 = document.createElement("meta") 
-  meta1.content="https://ruyatapiri.com/?ruya=ruyada-"+ruyaURL +"-gormek-ne-manaya-gelir"
-  meta1.property="og:url" 
-  var meta2 = document.createElement("meta")
-  meta2.content=ruya
-  meta2.property= "og:title"
-  var meta3 = document.createElement("meta") 
-  meta3.content="ruyanizi tapir yorumlasin"
-  meta3.property="og:description" 
-  document.getElementsByTagName('head')[0].appendChild(meta1
-  ); 
-  document.getElementsByTagName('head')[0].appendChild(meta2
-    );  
-  document.getElementsByTagName('head')[0].appendChild(meta3
-      ); 
+  
+  document.getElementsByTagName('head').innerHTML= `
+      <meta property="og:url"           content="https://ruyatapiri.com/?ruya=ruyada-${ruyaURL}-gormek-ne-manaya-gelir"
+      <meta property="og:type"          content="website" />
+      <meta property="og:title"         content=${ruya} />
+      <meta property="og:description"   content="Your description" />
+      <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
+      `
+
 }
   
 
