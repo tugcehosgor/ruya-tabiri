@@ -89,6 +89,8 @@ document.getElementById("app").innerHTML = `
   </div>
     
 </div>
+
+
   `;
 
   
@@ -179,8 +181,40 @@ function ruyaTabiri(ruya) {
 
 
       <div>
-`;
+      
+      
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
+<!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="https://www.your-domain.com/your-page.html" 
+data-layout="button_count">
+</div>
+
+`;
+  var meta1 = document.createElement("meta") 
+  meta1.content="https://ruyatapiri.com/?ruya=ruyada-"+ruyaURL +"-gormek-ne-manaya-gelir"
+  meta1.property="og:url" 
+  var meta2 = document.createElement("meta")
+  meta2.content=ruya
+  meta2.property= "og:title"
+  var meta3 = document.createElement("meta") 
+  meta3.content="ruyanizi tapir yorumlasin"
+  meta3.property="og:description" 
+  document.getElementsByTagName('head')[0].appendChild(meta1
+  ); 
+  document.getElementsByTagName('head')[0].appendChild(meta2
+    );  
+  document.getElementsByTagName('head')[0].appendChild(meta3
+      ); 
 }
   
 
