@@ -56,7 +56,10 @@ input.addEventListener("keyup", function(event) {
   }
 });
 
-
+window.onhashchange = function() { 
+  console.log("change678 ");
+  
+}
 
 function enterRuya() {
 document.getElementById("app").innerHTML = `
@@ -71,10 +74,11 @@ document.getElementById("app").innerHTML = `
     <p class="text-center mt-md-4">Bana rüyanı söyle,<br>sana ne anlama geldiğini söyleyeyim.</p>
     </div>
   </div>
+  
   <div class="row justify-content-center">
       
       <div class="col">
-        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required /> gordum</p><br>
+        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gordum</p><br>
       </div>
   </div>
     
@@ -87,14 +91,43 @@ document.getElementById("app").innerHTML = `
 </div>
   `;
 
+  
+
+  window.onpopstate = function(event) {
+    enterRuya()
+  };
+
+
+
+
 
 document.getElementById("submit").addEventListener("click", function () {
+  debugger
+
+
+  let stateObj = {
+    foo: "bar",
+}
+
+history.pushState(stateObj, "page 2", ruyaURL)
+
+
+
+
   readInputs();
-  makeHtml();
-  changeURL();
-  ruyaTabiri(ruya);
-  console.log(ruyaURL);
-  set(ref(database, ruyaURL), ruya);
+  if (ruya == "") {
+    alert("lutfen bir ruya giriniz.");
+    return false;
+  }
+  else{
+    
+    makeHtml();
+    changeURL();
+    ruyaTabiri(ruya);
+    console.log(ruyaURL);
+    set(ref(database, ruyaURL), ruya);
+  }
+  
 });
 
 }
