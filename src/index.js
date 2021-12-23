@@ -44,17 +44,7 @@ if (ruyaURL === null) {
 }
 console.log("ruya URL:::  " + ruyaURL);
 
-var input = document.getElementById("mana");
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("submit").click();
-  }
-});
+
 
 window.onhashchange = function() { 
   console.log("change678 ");
@@ -89,18 +79,24 @@ document.getElementById("app").innerHTML = `
   </div>
     
 </div>
+`;
 
 
-  `;
-
-  
+var input = document.getElementById("mana");
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("submit").click();
+  }
+});
 
   window.onpopstate = function(event) {
     enterRuya()
   };
-
-
-
 
 
 document.getElementById("submit").addEventListener("click", function () {
@@ -171,24 +167,18 @@ function changeURL() {
 function ruyaTabiri(ruya) {
   document.getElementById("app").innerHTML = `
   <div class="container mt-5">
-        <div class="row ">
+      <div class="row ">
           <div class="col text-center">
             <p class="text-center">Rüyada ${ruya} görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
             <img src="/Sleeping-tapir-fine.png" style="width:50%" class="img-fluid" alt="...">
-            </div>
-        </div>
-        
-        
-        
-        
-
-
-
-        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-
+          </div>
+      </div>
   </div>
-      
+
+
+  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  
       
 
 
@@ -196,13 +186,7 @@ function ruyaTabiri(ruya) {
 
 `;
   
-  document.getElementsByTagName('head').innerHTML= `
-      <meta property="og:url"           content="https://ruyatapiri.com/?ruya=ruyada-${ruyaURL}-gormek-ne-manaya-gelir"
-      <meta property="og:type"          content="website" />
-      <meta property="og:title"         content="${ruya}" />
-      <meta property="og:description"   content="Your description" />
-      <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
-      `
+  
 
 }
   

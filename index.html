@@ -7,6 +7,7 @@
     <meta property="og:title"         content="Rüyamın öyle ilginç bir anlamı varmış ki…" />
     <meta property="og:description"   content="Rüya Tapir’inden rüya tabirleri!" />
     <meta property="og:image"         content="https://ruyatapiri.com/Tapir-fine-line-cropped.png" />
+    
 
 
 
@@ -24,9 +25,29 @@
 
   <body>
     <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
+    <!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="http://127.0.0.1:5500/" 
+data-layout="button_count">
+</div>
 
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v12.0" nonce="x7AN7TST"></script>
+<!-- Your share button code -->
+<div class="fb-share-button" 
+data-href="http://127.0.0.1:5500/" 
+data-layout="button">
+</div>
+
+
+<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
 
 
     <div id="app"></div>
