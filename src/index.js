@@ -178,33 +178,28 @@ function ruyaTabiri(ruya) {
             <img src="/Sleeping-tapir-fine.png" style="width:50%" class="img-fluid" alt="...">
             </div>
         </div>
+        
+        
+        
+        
 
 
-      <div>
+
+        <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+  </div>
       
       
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 
-<!-- Your share button code -->
-<div class="fb-share-button" 
-data-href="https://www.your-domain.com/your-page.html" 
-data-layout="button_count">
-</div>
+
+      
 
 `;
   
   document.getElementsByTagName('head').innerHTML= `
       <meta property="og:url"           content="https://ruyatapiri.com/?ruya=ruyada-${ruyaURL}-gormek-ne-manaya-gelir"
       <meta property="og:type"          content="website" />
-      <meta property="og:title"         content=${ruya} />
+      <meta property="og:title"         content="${ruya}" />
       <meta property="og:description"   content="Your description" />
       <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
       `
