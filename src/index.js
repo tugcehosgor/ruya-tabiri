@@ -175,9 +175,13 @@ function ruyaTabiri(ruya) {
           </div>
       </div>
   </div>
-
-
-  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  <div class="container mt-5">
+      <div class="row ">
+          <div class="col text-center">
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&layout=button&size=large&width=120&height=50&appId" width="80" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+      </div>
+  </div>
   
       
 
