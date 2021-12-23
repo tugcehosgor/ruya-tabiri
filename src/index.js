@@ -169,7 +169,7 @@ function ruyaTabiri(ruya) {
   <div class="container mt-5">
       <div class="row ">
           <div class="col text-center">
-            <p class="text-center">Rüyada ${ruya} görmek</p>
+            <p class="text-center">Rüyada "${ruya}" görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
             <img src="/Sleeping-tapir-fine.png" style="width:50%" class="img-fluid" alt="...">
           </div>
@@ -177,7 +177,7 @@ function ruyaTabiri(ruya) {
   </div>
 
 
-  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&layout=button&size=small&width=67&height=20&appId" width="67" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
   
       
 
