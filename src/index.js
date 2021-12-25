@@ -61,14 +61,14 @@ document.getElementById("app").innerHTML = `
   </div>
   <div class="row mx-md-5">
     <div class="col">
-    <p class="text-center mt-md-4">Bana rüyanı söyle,sana ne anlama geldiğini söyleyeyim.</p>
+    <p class="text-center mt-md-4">Bana rüyanı söyle, sana ne anlama geldiğini söyleyeyim.</p>
     </div>
   </div>
   
   <div class="row justify-content-center">
       
       <div class="col">
-        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gordum</p>
+        <p class="text-center">Rüyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gördüm</p>
       </div>
   </div>
     
@@ -171,17 +171,52 @@ function ruyaTabiri(ruya) {
           <div class="col text-center">
             <p class="text-center">Rüyada "${ruya}" görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
-            <img src="/Sleeping-tapir-fine-1.png" style="width:50%" class="img-fluid" alt="...">
+            <img src="/Sleeping-tapir-fine-1.png" class="img-fluid" alt="...">
           </div>
       </div>
   </div>
-  <div class="container mt-5">
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+
+
+    <div class="container mt-5">
       <div class="row ">
           <div class="col text-center">
-            <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&layout=button&size=large&width=120&height=50&appId" width="80" height="30" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-            </div>
-      </div>
-  </div>
+    
+          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')">
+    
+          <button id="gooey-button">
+        Paylaş
+        <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+    </button>
+    </a>
+    </div>
+    </div>
+</div>
+
+
+
   
       
 
@@ -214,7 +249,7 @@ function checkRuya() {
       <div class="container">
         <div class="row justify-content-center">
           <div class="col mt-5">
-          <p class="text-center">Ruya Tapir'i bu konuda halen çalışmakta.</p>
+          <p class="text-center">Rüya Tapir'i bu konuda halen çalışmakta.</p>
           <p class="text-center">Lütfen daha sonra tekrar deneyiniz.</p>        
           </div>
         </div>
