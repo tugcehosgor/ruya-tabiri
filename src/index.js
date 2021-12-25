@@ -61,20 +61,20 @@ document.getElementById("app").innerHTML = `
   </div>
   <div class="row mx-md-5">
     <div class="col">
-    <p class="text-center mt-md-4">Bana rüyanı söyle,<br>sana ne anlama geldiğini söyleyeyim.</p>
+    <p class="text-center mt-md-4">Bana rüyanı söyle,sana ne anlama geldiğini söyleyeyim.</p>
     </div>
   </div>
   
   <div class="row justify-content-center">
       
       <div class="col">
-        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gordum</p><br>
+        <p class="text-center">Ruyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gordum</p>
       </div>
   </div>
     
   <div class="row justify-content-center">
       <div class="col text-center">
-      <button class="mt-3" id="submit">Tapir'e Sor</button><br>
+      <button class="mt-3" id="submit">Tapir'e Sor</button>
       </div>
   </div>
     
