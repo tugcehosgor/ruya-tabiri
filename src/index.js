@@ -74,7 +74,7 @@ document.getElementById("app").innerHTML = `
     
   <div class="row justify-content-center">
       <div class="col text-center">
-      <button class="mt-3" id="submit">Tapir'e Sor</button>
+      <button class="mt-3 button3" id="submit">Tapir'e Sor</button>
       </div>
   </div>
     
