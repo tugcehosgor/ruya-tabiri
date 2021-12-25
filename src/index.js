@@ -171,7 +171,7 @@ function ruyaTabiri(ruya) {
           <div class="col text-center">
             <p class="text-center">Rüyada "${ruya}" görmek</p>
             <p class="text-center">kıçının açık kaldığına delalet etmektedir.</p>
-            <img src="/Sleeping-tapir-fine.png" style="width:50%" class="img-fluid" alt="...">
+            <img src="/Sleeping-tapir-fine-1.png" style="width:50%" class="img-fluid" alt="...">
           </div>
       </div>
   </div>
