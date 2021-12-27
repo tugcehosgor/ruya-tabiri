@@ -67,14 +67,39 @@ document.getElementById("app").innerHTML = `
   
   <div class="row justify-content-center">
       
-      <div class="col">
+      <div class="col" style="padding-bottom: 15px">
         <p class="text-center">Rüyada <input id="mana" autofocus class="text-center mt-md-2" type="text" value="" placeholder="" required> gördüm</p>
       </div>
   </div>
+
+  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="gooey">
+                <!-- in="sourceGraphic" -->
+                <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+                <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="highContrastGraphic" />
+                <feComposite in="SourceGraphic" in2="highContrastGraphic" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
     
   <div class="row justify-content-center">
       <div class="col text-center">
-      <button class="mt-3 button3" id="submit">Tapir'e Sor</button>
+      <button class="mt-3" id="submit">
+      Tapir'e Sor
+      <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+        </button>
       </div>
   </div>
     
@@ -192,6 +217,26 @@ function ruyaTabiri(ruya) {
     <div class="container mt-5">
       <div class="row ">
           <div class="col text-center">
+              <a href="https://ruyatapiri.com/"><button id="new-gooey">
+              yeni rüya
+              <span class="bubbles">
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+            <span class="bubble"></span>
+        </span>
+      </button>
+      </a>
+
+          </div>
+
+          <div class="col text-center">
     
           <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fruyatapiri.com%2F?ruya=${ruyaURL}&display=popup&ref=plugin&src=share_button" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')">
     
@@ -212,6 +257,9 @@ function ruyaTabiri(ruya) {
     </button>
     </a>
     </div>
+          
+
+
     </div>
 </div>
 
