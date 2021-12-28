@@ -613,7 +613,7 @@ svg {
   }
 }
 
-@supports (-webkit-touch-callout: none) and (max-device-width: 768px) {
+@media only screen and (max-device-width: 768px) {
   .bubbles .bubble {
     /*CSS transitions*/
     -o-transition-property: none !important;
